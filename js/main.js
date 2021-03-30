@@ -16,7 +16,7 @@ formSelector.addEventListener('submit', function (event) {
     entryId: data.nextEntryId
   };
   data.nextEntryId++;
-  data.entries.push(values);
+  data.entries.unshift(values);
   photo.src = './images/placeholder-image-square.jpg';
   formSelector.reset();
 
