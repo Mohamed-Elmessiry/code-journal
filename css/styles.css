@@ -74,7 +74,7 @@ button {
 
   img {
     width: 100%;
-    height: 50px;
+    max-height: 400px;
     object-fit: contain;
   }
 
@@ -96,7 +96,7 @@ button {
   }
 
   h2 {
-    text-align: center;
+    text-align: left;
   }
 
   .col-half {
@@ -109,12 +109,16 @@ button {
   }
 
   h3 {
-    text-align: center;
+    text-align: left;
   }
 
   .button {
     text-align: right;
     width: 100%;
     padding: 5px;
+  }
+
+  .img-container {
+    width: 100%;
   }
 }
