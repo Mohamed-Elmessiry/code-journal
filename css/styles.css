@@ -197,3 +197,17 @@ a {
   align-items: center;
   padding-left: 15px;
 }
+
+.entries {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-button {
+  background-color: white;
+  padding-top: 20px;
+}
+
+.new {
+  text-align: center;
+}
