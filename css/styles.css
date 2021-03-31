@@ -121,3 +121,79 @@ button {
     width: 100%;
   }
 }
+
+.hide {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.dummy {
+  display: flex;
+  flex-direction: column;
+}
+
+.dummy-row {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+}
+
+.dummy-image {
+  width: calc(100% / 2);
+}
+
+.dummy-text {
+  width: calc(100% / 2);
+}
+
+.d-photo {
+  width: 90%;
+  height: 183px;
+}
+
+@media (max-width: 667px) {
+  .dummy-row {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  .dummy-text {
+    width: 100%;
+  }
+
+  li {
+    font-size: 10px;
+  }
+
+  h2.dummy {
+    font-size: 12px;
+  }
+
+  .dummy-image {
+    width: 100%;
+  }
+
+  .d-photo {
+    width: 100%;
+  }
+}
+
+.top-items {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  padding-bottom: 15px;
+}
+
+.nav-elements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+}
