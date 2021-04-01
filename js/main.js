@@ -60,6 +60,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
   restore();
 });
 
+var htwoEntries = document.querySelector('.hEntries');
+
 var displayList = document.querySelector('.dummy');
 
 var newButton = document.querySelector('.new');
@@ -67,7 +69,8 @@ newButton.addEventListener('click', function (event) {
   formSelector.className = 'main-form';
   displayList.className = 'hidden';
   data.view = 'entry-form';
-
+  htwoEntries.className = 'hidden';
+  newButton.className = 'hidden';
   restore();
 });
 
@@ -76,6 +79,8 @@ views.addEventListener('click', function (event) {
   formSelector.className = 'hidden';
   displayList.className = 'dummy';
   data.view = 'entries';
+  htwoEntries.className = 'hEntries';
+  newButton.className = 'new';
 
   restore();
 

@@ -30,7 +30,6 @@
   <main class="container">
     <div class="view" data-view="entry-form">
       <form class="main-form hidden" >
-        <!-- class of main-form -->
         <h2>New Entry</h2>
         <div class="row-half">
           <div class="img-container">
@@ -39,7 +38,7 @@
           <div class="col-half">
             <label for="title">Title</label>
             <input required name="title" type="text" id="title">
-            <label for="photo-url" >Photo URL</label>
+            <label for="photo-url" class="photo-label" >Photo URL</label>
             <input required name="url" type="text" class="photo-url">
           </div>
         </div>
@@ -56,7 +55,7 @@
     </div>
     <div class="viewTwo" data-view="entries">
       <div class="entries">
-        <h2>Entries</h2>
+        <h2 class="hEntries">Entries</h2>
         <div class="new-button">
           <button class="new">NEW</button>
         </div>
