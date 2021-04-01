@@ -121,10 +121,6 @@ button {
   }
 }
 
-.hide {
-  display: none;
-}
-
 ul {
   list-style-type: none;
 }
@@ -152,34 +148,6 @@ ul {
 .d-photo {
   width: 90%;
   height: 183px;
-}
-
-@media (max-width: 667px) {
-  .dummy-row {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-  }
-
-  .dummy-text {
-    width: 100%;
-  }
-
-  li {
-    font-size: 10px;
-  }
-
-  h2.dummy {
-    font-size: 12px;
-  }
-
-  .dummy-image {
-    width: 100%;
-  }
-
-  .d-photo {
-    width: 100%;
-  }
 }
 
 .top-items {
@@ -214,4 +182,32 @@ a {
 
 .photo-label {
   padding-top: 30px;
+}
+
+@media (max-width: 667px) {
+  .dummy-row {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  .dummy-text {
+    width: 100%;
+  }
+
+  li {
+    font-size: 10px;
+  }
+
+  h2.dummy {
+    font-size: 12px;
+  }
+
+  .dummy-image {
+    width: 100%;
+  }
+
+  .d-photo {
+    width: 100%;
+  }
 }
