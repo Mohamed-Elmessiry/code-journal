@@ -51,13 +51,13 @@ function addEntry(entry) {
   return divOne;
 }
 
-// var attr = event.target.getAttribute('data-view');
 var dummySelector = document.querySelector('.dummy');
 
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     dummySelector.appendChild(addEntry(data.entries[i]));
   }
+  restore();
 });
 
 var displayList = document.querySelector('.dummy');
@@ -66,12 +66,28 @@ var newButton = document.querySelector('.new');
 newButton.addEventListener('click', function (event) {
   formSelector.className = 'main-form';
   displayList.className = 'hidden';
+  data.view = 'entry-form';
 
+  restore();
 });
 
 var views = document.querySelector('.a-entries');
 views.addEventListener('click', function (event) {
   formSelector.className = 'hidden';
   displayList.className = 'dummy';
+  data.view = 'entries';
+
+  restore();
 
 });
+
+function restore(event) {
+  if (data.view === 'entries') {
+    formSelector.className = 'hidden';
+    displayList.className = 'dummy';
+  } else if (data.view === 'entry-form') {
+    formSelector.className = 'main-form';
+    displayList.className = 'hidden';
+  }
+
+}
