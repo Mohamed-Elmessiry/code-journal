@@ -22,10 +22,20 @@ formSelector.addEventListener('submit', function (event) {
 
 });
 
+function idNum(data) {
+  var count = 0;
+  for (var i = 0; i < data.entries.length; i++) {
+    count = data.entries[i].entryId++;
+
+  }
+  return count;
+}
+
 function addEntry(entry) {
 
   var divOne = document.createElement('div');
   divOne.setAttribute('class', 'dummy-row');
+  divOne.setAttribute('data-entry-id', idNum(data));
   var divImage = document.createElement('div');
   divImage.setAttribute('class', 'dummy-image');
   divOne.appendChild(divImage);
@@ -48,6 +58,24 @@ function addEntry(entry) {
   listThree.textContent = entry.textbox;
   divText.appendChild(listThree);
 
+  var editButtonDiv = document.createElement('div');
+  editButtonDiv.setAttribute('class', 'edit-button-container');
+  divOne.appendChild(editButtonDiv);
+  var editButton = document.createElement('button');
+  editButton.setAttribute('class', 'edit-button');
+  editButtonDiv.appendChild(editButton);
+
+  editButton.addEventListener('click', function () {
+    formSelector.className = 'main-form';
+    displayList.className = 'hidden';
+    for (var i = 0; i < data.entries.length; i++) {
+      if (event.target === data.entries[i]) {
+        titleSelector.textContent = data.entries[i].title;
+      }
+    }
+
+  });
+
   return divOne;
 }
 
@@ -56,6 +84,7 @@ var dummySelector = document.querySelector('.dummy');
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     dummySelector.appendChild(addEntry(data.entries[i]));
+
   }
   changeView();
 });
@@ -96,3 +125,5 @@ function changeView(event) {
   }
 
 }
+
+var titleSelector = document.querySelector('#title');
