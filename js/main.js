@@ -65,12 +65,12 @@ function addEntry(entry) {
   editButton.setAttribute('class', 'edit-button');
   editButtonDiv.appendChild(editButton);
 
-  editButton.addEventListener('click', function () {
+  divOne.addEventListener('click', function () {
     formSelector.className = 'main-form';
     displayList.className = 'hidden';
     for (var i = 0; i < data.entries.length; i++) {
-      if (event.target === data.entries[i]) {
-        titleSelector.textContent = data.entries[i].title;
+      if (event.target === data.entries[i].entryId) {
+        titleSelector.value = data.entries[i].title;
       }
     }
 
