@@ -22,20 +22,11 @@ formSelector.addEventListener('submit', function (event) {
 
 });
 
-function idNum(data) {
-  var count = 0;
-  for (var i = 0; i < data.entries.length; i++) {
-    count = data.entries[i].entryId++;
-
-  }
-  return count;
-}
-
 function addEntry(entry) {
 
   var divOne = document.createElement('div');
   divOne.setAttribute('class', 'dummy-row');
-  divOne.setAttribute('data-entry-id', idNum(data));
+  divOne.setAttribute('data-entry-id', entry.entryId);
   var divImage = document.createElement('div');
   divImage.setAttribute('class', 'dummy-image');
   divOne.appendChild(divImage);
@@ -69,8 +60,11 @@ function addEntry(entry) {
     formSelector.className = 'main-form';
     displayList.className = 'hidden';
     for (var i = 0; i < data.entries.length; i++) {
-      if (event.target === data.entries[i].entryId) {
+      if (entry.entryId === data.entries[i].entryId) {
         titleSelector.value = data.entries[i].title;
+        urlInputSelector.value = data.entries[i].url;
+        textAreaInputSelector.value = data.entries[i].textbox;
+
       }
     }
 
@@ -127,3 +121,5 @@ function changeView(event) {
 }
 
 var titleSelector = document.querySelector('#title');
+var urlInputSelector = document.querySelector('.photo-url');
+var textAreaInputSelector = document.querySelector('.text-area');
